@@ -9,7 +9,8 @@ angular.module('journalApp')
     var callbackJournal = function(data){
       $scope.journal =data;
 
-
+      $scope.pageSize=1000;
+      $scope.currentPage=1;
     };
 
     init();

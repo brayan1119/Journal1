@@ -10,9 +10,14 @@
 </header>
 
 <div class="container">
+
+
   <div class="row">
     <div class="col-xs-4">
-      <h3>Journal Page: {{ currentPage }}</h3>
+      <h3>Journal Page: </h3>
+      <dir-pagination-controls>
+
+      </dir-pagination-controls>
     </div>
     <div class="col-xs-4">
       <label for="search">Search:</label>
@@ -20,13 +25,13 @@
     </div>
     <div class="col-xs-4">
       <label for="search">items per page:</label>
-      <input type="number" min="5" max="1000" class="form-control" ng-model="pageSize">
+      <input ng-model="pageSize"  type="number" min="1000" max="100000" class="form-control" >
     </div>
   </div>
   <br>
-<div class="panel panel-default">
+
   <div class="panel-body">
-    <ul dir-paginate="journal in journal | filter:q | itemsPerPage: pageSize" current-page="currentPage">
+    <ul dir-paginate="journal in journal | filter:q | itemsPerPage: pageSize" current-page="currentPage" >
       <li><a href="#">{{ journal.namejournal }}</a></li>
     </ul>
     <dir-pagination-controls>
